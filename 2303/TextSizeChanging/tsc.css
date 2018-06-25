@@ -1,0 +1,27 @@
+.tsc_wrapper {
+  width: 100%;
+  height: 50px;
+}
+
+.tsc_button {
+  width: 80px;
+  height: 50px;
+  color: white;
+  background-color: black;
+  float: left;
+  margin: 0px 10px;
+  line-height: 50px;
+  text-align: center;
+  transition: background-color 0.2s;
+}
+
+.tsc_button:hover {
+  cursor: pointer;
+  background-color: #767676;
+}
+
+.tsc_btn_wrp {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+}

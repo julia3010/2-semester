@@ -1,0 +1,17 @@
+{
+  "name": "20180302_151057",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.10"
+  },
+  "dependencies": {
+    "faker": "^4.1.0",
+    "moment": "^2.20.1"
+  },
+  "scripts": {
+    "build": "webpack"
+  }
+}

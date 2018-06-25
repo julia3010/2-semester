@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Basket</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="list item" id="temp" style="display: none">
+      <span class="lt" id="templt">null</span>
+      <span class="rt" id="temprt">null</span>
+    </div>
+
+    <div id="wrapper">
+      <div class="wrapperDummy" id="wrapperDummy"></div>
+      <div id="leftList" class="list" data-bind="foreach: itemList">
+        <div class="item" data-bind="attr: {id: 'itemR' + $index()}">
+          <span class="lt" data-bind="text: itemName, attr: {id: 'lt' + $index()}"></span>
+          <span class="rt" data-bind="text: '₽'+price, attr: {id: 'rt' + $index()}"></span>
+        </div>
+      </div>
+      <div id="rightList"  class="list">
+        <div id="cart" class="list" data-bind="visible: cartIsEmpty(), style: {display: cartIsEmpty() ? 'table-cell' : 'none'}">
+          Перенесите товар в корзину!
+        </div>
+        <!-- <div id="cartFull" class="list" data-bind="visible: !cartIsEmpty(), foreach: cartList" z-index="1000"> -->
+        <div id="cartFull" class="list" data-bind="visible: !cartIsEmpty(), foreach: cartList" z-index="1000">
+          <div title="Press to remove item" data-bind="attr: {id: $index}, css: {itemR: $data[0].itemName()==($root.itemList()[$index()].itemName), itemEmpty: $data[0].itemName()===null}, click: $root.rmItem.bind($root, $index())">
+            <span class="lt" data-bind="text: $data[0].itemName()===null ? '' : $data[1]() + 'x ' + $data[0].itemName()"></span>
+            <span class="rt" data-bind="text: $data[0].itemName()===null ? '' : '₽' + (Math.round($data[0].price*$data[1]()*100) / 100)"></span>
+          </div>
+        </div>
+      </div>
+      <div class="wrapperDummy" data-bind="text: 'Итого: $' + (Math.round(totalPrice()*100) / 100)"></div>
+    </div>
+
+    <script type='text/javascript' src='knockout-3.4.2.js'></script>
+    <script defer src="app.js"></script>
+    <script defer src="dnd.js"></script>
+
+
+  </body>
+</html>

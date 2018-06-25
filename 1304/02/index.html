@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Кастомные элементы</title><meta charset="utf-8">
+</head>
+<body>
+  <h4 title="GossJS" id="author">Юлия Севостьянова</h4>
+  <article>
+    <h1>Кастомные элементы</h1>
+    <x-cntr val="1"></x-cntr> <x-cntr val="16"></x-cntr>
+  </article>
+  <script>
+  class Counter extends HTMLElement {
+    constructor() {
+      super();
+      this.style.cssText += 'display: inline-block; padding: 10px; border: 2px solid silver; border-radius: 8px; font-size: 1.5em;';
+
+      const shadow = this.attachShadow({mode: 'open'});
+      shadow.textContent = "⇧";
+
+      this.span = document.createElement('span');
+      this.span.textContent = this.getAttribute('val');
+      shadow.appendChild(this.span);
+
+      this.addEventListener('click', () => {
+        this.setAttribute('val', parseInt(this.getAttribute('val')) + 1)
+      });
+    }
+
+    static get observedAttributes() {
+      return ['val'];
+    }
+
+    attributeChangedCallback() {
+      this.span.textContent = this.getAttribute('val');
+    }
+  }
+  customElements.define('x-cntr', Counter);
+  </script>
+</body>
+</html>

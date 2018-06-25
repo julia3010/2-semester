@@ -1,0 +1,137 @@
+@font-face {
+font-family: "OpenSans";
+}
+
+body {
+  background-color: #fff;
+}
+
+#wrapper {
+  width: 1040px;
+  height: 640px;
+  margin: auto;
+  background-color: #fff;
+  box-shadow: 0 0 5px;
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+}
+
+.wrapperDummy {
+  width: 100%;
+  height: 25%;
+  /*background-color: #fff;*/
+  float: left;
+  font-family: Helvetica;
+  font-size: 38px;
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+  line-height: 160px;
+  color: #006363;
+}
+
+.list {
+  width: 400px;
+  height: 320px;
+  font-family: Helvetica;
+  font-size: 25px;
+  color: #fff; /*шрифт*/
+  line-height: 80px;
+  }
+
+#leftList {
+  float: left;
+  margin: 0px 40px 0px 80px;
+}
+
+#rightList {
+  float: right;
+  margin: 0px 80px 0px 40px;
+}
+
+#cart {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  font-size: 25px;
+  background-color: #006363;
+  box-shadow: none;
+  transition: box-shadow 0.2s, background-color 0.2s;
+  z-index: 5000;
+}
+
+#cart:hover {
+  box-shadow: inset 0 0 5px 0px black;
+  background-color: #fff;
+  color: #006363;
+}
+
+#cartFull {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+  font-size: 16px;
+  background-color: #006363;
+  box-shadow: none;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+#cartFull:hover {
+  box-shadow: inset 0 0 5px 0px black;
+  background-color: #006363;
+}
+
+.item {
+  width: 400px;
+  height: 80px;
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
+  color: 006363;
+  
+}
+
+.item:hover {
+  background-color: #006363;
+  color: #fff;
+  box-shadow: inset 0 0 3px 0px black;
+}
+
+.itemR {
+  width: 400px;
+  height: 80px;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.itemR:hover {
+  background-color: #fff;
+  color: #006363;
+  box-shadow: inset 0 0 3px 0px black;
+}
+
+.itemEmpty {
+  width: 400px;
+  height: 80px;
+  position: relative;
+}
+
+.lt {
+  position: absolute;
+  left: 10px;
+  font-size: 18px;
+}
+
+.rt {
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+}
+
+/*::selection {
+   background: transparent;
+}*/
